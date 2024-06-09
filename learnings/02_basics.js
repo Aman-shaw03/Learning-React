@@ -42,3 +42,27 @@
 
 // we can inject variable using {variable_name} => this is called Evaluated expression (final result)
 // this does nt hold if else and other statement , just final expression
+
+
+/*Virtual DOM and React fiber */
+
+// Virtual DOM is based on a algortihm named Reconciliation , it create  a Tree which is different from tree created by browser .
+
+//But the browser removes the whole DOM and then recrates the whole DOM with the updated values this is called reload.
+
+
+// earlier when a single button/property is updated on browser => whole page reloads and update everything on the web pagebut with Virtual DOM (since it creates his own Tree of components ) it compares with the browser Tree and only update those components and state's which need to be updates (setState is used to update)
+
+// when we use render in React it create a tree node and saved in a memory and move to rendering enviroment , which then compare to the web DOM and only setState those operation which are diffed
+
+// currently NO ONE USE VIRTUAL DOM , rather they use fiber which is like same but better algorithms , which change only the few state , priority basis ,and some updated things 
+
+/*But some values depends on network call so if we update a value it might get update immediately via a network call.
+ So we will have to update it again. To avoid this overhead we can drop the updation calls for the immediate value update.
+ The current algo used by the React is called the "React Fibre algo".
+ The algo react uses to "differentiate" the web browser's tree and React's tree formed through create root is called "reconciliation."
+ Reconciliation is the algo behind what popularly known as the Virtual-DOM. 
+ 
+ in UI it is not necessary for every update to be applied immediately which cause framedrops , and degrades user Experience*/
+
+//  in react if we use list to do some operations , we have to use "keys" to increase the efficiency of operations
