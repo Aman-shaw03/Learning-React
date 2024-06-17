@@ -1,4 +1,4 @@
-import {useEffect, useState} from "React"
+import {useEffect, useState} from "react"
 
 // we are gonna create some custom Hooks and use it 
 // hook is mainly a function written and return in JS , so we keep the file in js format
@@ -11,14 +11,13 @@ import {useEffect, useState} from "React"
 
 function useCurrencyInfo(currency){
     const [data, setData] = useState({})
-    
-    useEffect = ( ()=> {
+    useEffect(()=> {
     fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/${currency}.json`)
     .then((res)=>res.json())
     .then((res)=>setData(res[currency]))
-
     console.log(data);
     },[currency])
+
     console.log(data);
     return data
 
