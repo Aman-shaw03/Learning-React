@@ -1,4 +1,5 @@
 /* Today i learn how to install tailwind with its dev dependencies  */
+
 /* props = when we create a function for any element(card, button) in react it accept a props(properties)
 which we can use to pass details , so it would take lesser time to create same type of elements 
 or simply pass {channel,btnText} and use them  */
@@ -48,14 +49,13 @@ create a counter with 2 button add value and remove value.
 
 
         
-        /* also setcounter could nt hold the counter variable becoz 
-        
-
-        Detailed explaination of why does first syntax only updates the count once:
+     /* Detailed explaination of why does first syntax only updates the count once:
         Initial State: Assume count is initially 69.
         First Call: setCount(count + 1) schedules a state update to set count to 70 (69 + 1).
         Second Call: setCount(count + 1) schedules another state update to set count to 70 (69 + 1), because count is still 69 in this scope.
         Third Call: setCount(count + 1) schedules yet another state update to set count to 70 (69 + 1), again because count is still 69 in this scope.
+        The set function only updates the state variable for the next render.
+        calling the set function does not update the age state variable in the already running code.
 
         In case of functional updater syntax React ensures that changes are made to the latest state of the count hence each function gets access to the latest state of the count variable:
         First Call: setCount(count =>count+1) schedules a state update to set count to 70
@@ -65,4 +65,8 @@ create a counter with 2 button add value and remove value.
             after callback another call/render is happen which update the values from (69 to 70 to ....)
             due to this callback function it updates the values and provides us previous state/vals to add/subtract more*/
 
-    /* Great under the hood of stateCounter , def go through the async with this part */
+          // updater function. It takes the pending state and calculates the next state from it.
+
+          // React puts your updater functions in a queue. Then, during the next render, it will call them in the same order
+
+      /* Great under the hood of stateCounter , def go through the async with this part */

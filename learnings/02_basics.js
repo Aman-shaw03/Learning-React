@@ -1,6 +1,6 @@
 // we craete a custom react App which shows us how the BTS code is executing 
 
-//const mainContainer = document.querySelector('#root') we hold the root div 
+//const mainContainer = document.querySelector('#root') => we hold the root div 
 
 // const reactElement = {
 //     type: "a",
@@ -9,7 +9,7 @@
 //         target: "_blank"
 //     },
 //     children: "click me to visit Google"
-// } this is the data we give 
+// }  => this is the data we give 
 
 // it change our data to this format [function customRender(reactElement , container){
     // const domElement = document.createElement(reactElement.type)
@@ -35,18 +35,18 @@
 // then finally it render our code, which is now in tree structure 
 // customRender(reactElement, mainContainer)
 
-// behind the scene in React we have a "transpiler"[Babel] ehich converts data like this tree
+// behind the scene in React we have a "transpiler"[Babel] which converts our data like this tree structure
 
 
 /* How to Inject Variable in jsx , since jsx is html and we do need to inject varible */
 
 // we can inject variable using {variable_name} => this is called Evaluated expression (final result)
-// this does nt hold if else and other statement , just final expression
+// this does not hold if else and other statement , just final expression
 
 
 /*Virtual DOM and React fiber */
 
-// Virtual DOM is based on a algortihm named Reconciliation , it create  a Tree which is different from tree created by browser .
+// Virtual DOM is based on a algortihm which then does Reconciliation , it create  a Tree which is different from tree created by browser .
 
 //But the browser removes the whole DOM and then recrates the whole DOM with the updated values this is called reload.
 
