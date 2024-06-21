@@ -9,5 +9,6 @@ const UserContextProvider = ({children}) => {
         </UserContext.Provider>
     )
 }
-
+// children data is getting through User and if some data need to add , so we use setUser 
+// 
 export default UserContextProvider
