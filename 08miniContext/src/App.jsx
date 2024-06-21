@@ -12,8 +12,8 @@ function App() {
   return (
     <UserContextProvider>
       <h1>React w</h1>
-      <Login/>
-      <Profile/>
+      <Login />
+      <Profile />
     </UserContextProvider>
   )
 }
