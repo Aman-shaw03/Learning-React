@@ -20,7 +20,7 @@ function MyApp(){
 // }
 // this wont work , this need to be in a tree structure, and babel cant transpile into it now since its not a element or a function
 
-// this is not custom React and "render" is not doing custom render , so it follow some rules so this object cant be render now maily due to syntax
+// this is not custom React and "render" is not doing custom render , so it follow some rules so this object cant be render now mainly due to syntax
 
 const appReady = (
     <a href="hhtp://www.google.com" target='_blank'>say Hello to Google</a>
@@ -30,7 +30,7 @@ const appReady = (
 
 // a way to write element as per React is
 // how a variable is injected 
-// since it also is html in js , so like in html we dont use ifelse and other js code , so the logic is same
+// since it also is html in js , so like in html we dont use if-else and other js code , so the logic is same
 
 const user2 = "Chai aur changa"
 
