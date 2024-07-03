@@ -1,6 +1,6 @@
 
-import Footer from "./Footer/footer";
-import Header from "./Header/header";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
 
 
 export {
