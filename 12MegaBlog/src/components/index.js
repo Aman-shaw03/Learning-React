@@ -28,5 +28,5 @@ export {
         Login,
         PostForm,
         PostCard,
-        authLayout
+        authLayout,
     }
