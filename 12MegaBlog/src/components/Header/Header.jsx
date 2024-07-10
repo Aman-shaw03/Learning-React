@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 function Header() {
-  const authStatus = useSelector((state) =>{state.auth.status})
-  // it will take the status value from the store and we will check it and display on the header accordingly
+  const authStatus = useSelector((state) => state.auth.status)
+
   const navigate = useNavigate()
-  // production grade NavItems , now we dont have to create soo many Buttons and just a Object 
+
   const navItems = [
     {
       name: "Home",
