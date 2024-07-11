@@ -1,13 +1,14 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const intialState = {
+const initialState = {
     status: false,
     userData: null
 }
 
 const authSlice = createSlice({
     name: "auth",
-    intialState,
+    initialState,
+    // i wrote it as intialstate , spelling mistake
     reducers: {
         logIn : (state, action) => {
             state.status = true;

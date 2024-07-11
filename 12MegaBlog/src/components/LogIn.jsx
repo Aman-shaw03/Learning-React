@@ -13,7 +13,7 @@ function LogIn() {
     const [error , setError] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const {register, handlesubmit} = useForm()
+    const {register, handleSubmit} = useForm()
     // in useForm we get register and handleform => which is not function but rather a "keyword" and event 
     // so still we have to create a handlesubmit method pass it to onSubmit={handlesubmit(login)}
     // so it will pick the data from those input field into the register and we dont have to keep state 
@@ -51,7 +51,7 @@ function LogIn() {
                     </Link>
             </p>
             {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-            <form onSubmit={handlesubmit(login)} className='mt-8'>
+            <form onSubmit={handleSubmit(login)} className='mt-8'>
                 <div className='space-y-5'>
                     <Input
                     label="Email: "
@@ -64,13 +64,13 @@ function LogIn() {
                         }
                     })}
                     />
-                    // syntax to use "register"
+                    {/* // syntax to use "register"
                     // its compulsory to spread our register value in every components or else same value 
-                    //will got overwrite and unique name should be give like this "email"
+                    //will got overwrite and unique name should be give like this "email" */}
                     <Input
                     label= "Password: "
                     type="password"
-                    placeholder="ENter your Password"
+                    placeholder="Enter your Password"
                     {...register("password",{
                         required: true
                     })}

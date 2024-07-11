@@ -67,7 +67,7 @@ function Header() {
                 <LogoutBtn/>
               </li>
             )}
-            // a react syntax which tells if the first thing is True then i will execute the second thing 
+            {/* // a react syntax which tells if the first thing is True then i will execute the second thing  */}
           </ul>
         </nav>
       </Container>
