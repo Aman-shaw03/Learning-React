@@ -55,7 +55,7 @@
 
 // when we use render in React it create a tree node and saved in a memory and move to rendering enviroment , which then compare to the web DOM and only setState those operation which are diffed
 
-// currently NO ONE USE VIRTUAL DOM , rather they use fiber which is like same but better algorithms , which change only the few state , priority basis ,and some updated things 
+// React previously relied on a reconciliation process based on the Virtual DOM, but it now primarily uses the Fiber algorithm for more efficient updates. Fiber enables prioritized, interruptible work, leading to better performance in complex UIs and animations. 
 
 /*But some values depends on network call so if we update a value it might get update immediately via a network call.
  So we will have to update it again. To avoid this overhead we can drop the updation calls for the immediate value update.

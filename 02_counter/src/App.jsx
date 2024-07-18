@@ -1,7 +1,6 @@
 import { useState } from 'react'
 // this useState is a Hook from React. 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
   const removeValue = ()=>{
     counter = counter - 1
     if (counter < 0) {
-      alert("Maximum Number Reached 0")
+      alert("Minimum Number Reached 0")
       } else {
         
         setCounter(counter)
