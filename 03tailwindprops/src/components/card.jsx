@@ -1,5 +1,7 @@
 import React from 'react'
 // this card function is taking properties "props" which we can use to edit out the details
+
+
 function Card({channel,btntext = "AMeer"}) {
     return (
         // console.log(props.channel),
