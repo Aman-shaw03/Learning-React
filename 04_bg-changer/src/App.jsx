@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="w-full h-screen duration-200" style={{background: color}}>
-      <dir className = "fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+      <div className = "fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
         <div className="bg-white flex flex-wrap justify-center px-2 py-2 rounded-3xl shadow-lg gap-3">
           <button
           onClick={()=>setColor("red")}
@@ -43,13 +43,17 @@ function App() {
           style={{background:"olive"}}>olive
           </button>
           </div>
-      </dir>
+      </div>
     </div>
   )
 }
 
 export default App
-// so onclick expect a function this time , since we have to specify colorname to the setColor so if we did setColor it is referencing the function but we cant pass the color name as a argument => setColor("colorName") =>but this will execute the function and it will pass the result inside the function to the onClick but the onClick expect a function not a result vlue , 
+// so onclick expect a function this time , since we have to specify colorname to the setColor so if we did onClick={setColor} it is referencing the function but we cant pass the color name as a argument => setColor("colorName") =>as this will execute the function and it will pass the result of the function(setColor) inside the function to the onClick and the loop starts but the onClick expect a function not a result value , 
 // so the problem is of the syntax , to tackle this we have to write and pass a callback function and inside it we will pass the setColor with arg
 
 // onClick = {()=>setColor("colorName")}
+
+//updated info 
+// if we pass the argument directly so the state keep on rendering and updateing in a continuos loop, so we wrap it ina arrow function
+// so when funtion is execute in Onclick => it then call and execute setColor and that is not returning anything to onClick => which stops the error loop
