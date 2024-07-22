@@ -31,7 +31,7 @@
 
 /*Do not call useId to generate keys in a list */
 
-/*when using React why shouldnt we use a tag and what to use instead of it? */
+/*when using React why shouldnt we use "a" tag and what to use instead of it? */
 
 /* A tag require the web page to reload but React is there so we dont have to reload the whole page and paint the 
 picture again and again , instead we compare it to our tree and inject the diff and also this is why we dont prefer 
