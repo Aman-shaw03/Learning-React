@@ -37,8 +37,8 @@ function App() {
 
   const copypasswordtoClip = useCallback(()=>{
     passwordRef.current ?.select()
-    // we are using optional select "?" so if the value is "null" , it work then 
-    passwordRef.current?.setSelectionRange(0,12)
+    // we are using optional character "?" so if the value is "null" , it  wont have curernt value  
+    passwordRef.current?.setSelectionRange(0,length)
     window.navigator.clipboard.writeText(password)
     // since we know react will be render in browser and it has window object , so we can access it but in case of Next.js we have to server side rendering
   }, [password] )
@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
 
-      <h1 className='text-white text-center my-3'>Password generator</h1>
+    <h1 className='text-white text-center my-3'>Password generator</h1>
     <div className="flex shadow rounded-lg overflow-hidden mb-4">
 
       <input
@@ -62,7 +62,7 @@ function App() {
       placeholder="Password"
       readOnly
       ref={passwordRef}
-      // taking the ref from the input box (where we want)
+      // taking the ref from here (input box) and using it in copypasswordtoClip
       />
       <button
       onClick={copypasswordtoClip}

@@ -38,3 +38,10 @@ picture again and again , instead we compare it to our tree and inject the diff 
 "a" tag in react , one of the reason for using REACT
 
 instead we use link tag and nav link tag for same feature with additional things */
+
+/*useRef */
+
+// we use this hook to take a reference of a value. 
+// This object persists across renders and can be used to store values that don't need to trigger re-renders.
+// A current property: This property holds the value you want to persist. 
+// It can be any type of data (object, array, primitive, etc.).
