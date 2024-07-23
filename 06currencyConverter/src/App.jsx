@@ -27,10 +27,10 @@ function App() {
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
             backgroundImage: `url('https://images.pexels.com/photos/21815245/pexels-photo-21815245/free-photo-of-montana-amarilla.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`,
-        }}
-    >
+        }}>
         <div className="w-full">
-            <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+            <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm 
+            bg-white/30">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
@@ -43,7 +43,7 @@ function App() {
                             label="From"
                             Amount={Amount}
                             CurrencyOptions={options}
-                            onCurrencyChange={(currency) => setFrom(Amount)}
+                            onCurrencyChange={(currency) => setFrom(currency)}
                             selectCurrency={From}
                             onAmountChange={(Amount) => setAmount(Amount)}
                             
