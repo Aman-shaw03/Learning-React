@@ -40,12 +40,13 @@ function InputBox({
                     disabled = {CurrencyDisabled}
                 >
                     
-                        {CurrencyOptions.map((currency)=>(
-                            <option key={currency} value={currency}>
+                    {CurrencyOptions.map((currency)=>(
+                        <option key={currency} value={currency}>
                             {currency}
-                            </option>))}
-                            // always use key when loop in React for better optimizing
-                            /*Without keys, React might have difficulty distinguishing between elements when the list changes. This can lead to unexpected behavior, such as elements not updating correctly or unnecessary re-renders. Keys help React keep track of individual elements and prevent reconciliation issues. */
+                        </option>
+                    ))}
+                        // always use key when loop in React for better optimizing
+                        /*Without keys, React might have difficulty distinguishing between elements when the list changes. This can lead to unexpected behavior, such as elements not updating correctly or unnecessary re-renders. Keys help React keep track of individual elements and prevent reconciliation issues. */
                 
                 </select>
             </div>
