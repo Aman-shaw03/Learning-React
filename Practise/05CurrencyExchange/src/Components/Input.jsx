@@ -11,12 +11,12 @@ function Input({
     selectCurrency = "usd",   
     className = "",
 }) {
-   const amountInputId = useId
+   const amountInputId = useId()
 
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
             <div className="w-1/2">
-                <label id={amountInputId}  className="text-black/40 mb-2 inline-block">
+                <label htmlFor={amountInputId}  className="text-black/40 mb-2 inline-block">
                     {label}
                 </label>
                 <input
@@ -39,11 +39,11 @@ function Input({
                     
                 >
                     
-                        {CurrencyOptions.map((currency) => {
-                            <Option key={currency} value= {currency}>
+                        {CurrencyOptions.map((currency) => (
+                            <option key={currency} value= {currency}>
                                 {currency}
-                            </Option>
-                        })}
+                            </option>
+                        ))}
                 
                 </select>
             </div>
