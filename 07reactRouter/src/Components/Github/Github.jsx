@@ -24,3 +24,6 @@ export const githubInfoLoader = async() => {
     const response = await fetch("http://api.github.com/users/hiteshchoudhary")
     return response.json()
 }
+// so how this uselOader function work
+// bsically this useLoader uses the data which is passing through Route Loader attribute
+// when we are setting the routes responsible for fetching data before the component renders., then after receiving this data we can use in components 
