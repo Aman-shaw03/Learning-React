@@ -37,6 +37,10 @@ export default function Header() {
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 border-b ${isActive ? "text-orange-700" : "text-gray-700"} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
+                                    // why using a callback for classes?
+                                    // so we can getto inject a variable "isActive" which provide by reactRouter DOM
+                                    //it check with the url and give us bool values for the variable, so 
+                                    //we can either set some css as true(means page is active) or not
                                 >
                                     Home
                                 </NavLink>
