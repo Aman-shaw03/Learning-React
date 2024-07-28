@@ -11,6 +11,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setUser({UserName, password})
+        //here we are using the code provide by someContext.provider to set the data of User
     }
 
     return (

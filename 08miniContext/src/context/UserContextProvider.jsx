@@ -9,6 +9,8 @@ const UserContextProvider = ({children}) => {
         </UserContext.Provider>
     )
 }
-// children data is getting through User and if some data need to add , so we use setUser 
-// 
+// data is provided here by wraping our component in context.provider and passing Children as a prop
+//SomeContext.Provider lets you provide the context value to components.
+//call useContext(SomeContext) in components below to read it.  
+
 export default UserContextProvider
