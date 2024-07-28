@@ -31,7 +31,7 @@ function App() {
             <div className="w-full max-w-sm mx-auto">
                 <Card />
             </div>
-          </div>
+        </div>
       </div>
     </ThemeProvider>
   )
