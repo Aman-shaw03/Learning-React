@@ -20,7 +20,7 @@ function App() {
   const deleteTodo = (id) => {
     setTodo((prev) => prev.filter((todo) => todo.id !== id))
   }
-  //  delete the todo with id that matches whatever id we are passing 
+  //  create a array with all the elements except those elements which todo.id == id(what we are passing)
 
   const toggleComplete = (id) => {
     setTodo((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed } : prevTodo))
