@@ -13,6 +13,7 @@ function App() {
   const darkmode = ()=>{
     setThemeMode("dark")
   }
+  // we are not creating same function but passing the functionality to those function
 
   useEffect(() => {
     document.querySelector("html").classList.remove("light", "dark")
@@ -22,6 +23,8 @@ function App() {
 
   return (
     <ThemeContextProvider value={{themeMode, lightmode, darkmode}}>
+      //in the theme context , we set the intial values , so we pass it here
+      // using usestate to pass value to thememode
       
       <div className="flex flex-wrap min-h-screen items-center">
           <div className="w-full">

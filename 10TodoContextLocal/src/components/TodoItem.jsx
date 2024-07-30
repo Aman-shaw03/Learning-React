@@ -47,6 +47,7 @@ function TodoItem({ todo }) {
                     if (isTodoEditable) {
                         editTodo();
                     } else setIsTodoEditable((prev) => !prev);
+                    //thoda complex , if setIsTodoEditable is false and !todo.completed then onclick , reverse the setIsTodoEditable and then isTodoEditable become true and editTodo()
                 }}
                 disabled={todo.completed}
             >

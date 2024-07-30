@@ -10,18 +10,22 @@ function App() {
   const addTodo = (todo) =>{
     setTodo((prev) => [{id: Date.now(), ...todo},...prev] )
   }
+  // passing the todo in a array , setting id: dat.now( so random ids), spreading various todo, spreading previous todo so latest one comes on top
 
   const updateTodo = (id, todo) => {
     setTodo((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
   }
+  // if the id we are passing matches with the todo we intent to update , settodo(our new todo which we pass)
 
   const deleteTodo = (id) => {
     setTodo((prev) => prev.filter((todo) => todo.id !== id))
   }
+  //  delete the todo with id that matches whatever id we are passing 
 
   const toggleComplete = (id) => {
     setTodo((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed } : prevTodo))
   }
+  // just opposite the completed , false => true
 
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todos"))
