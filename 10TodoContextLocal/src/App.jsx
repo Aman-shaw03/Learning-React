@@ -21,6 +21,7 @@ function App() {
     setTodo((prev) => prev.filter((todo) => todo.id !== id))
   }
   //  create a array with all the elements except those elements which todo.id == id(what we are passing)
+  // what filter does is => Returns the elements of an array that meet the condition specified in a callback function.
 
   const toggleComplete = (id) => {
     setTodo((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed } : prevTodo))

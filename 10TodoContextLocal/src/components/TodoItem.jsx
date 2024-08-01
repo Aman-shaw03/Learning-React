@@ -11,6 +11,7 @@ function TodoItem({ todo }) {
     const editTodo = () => {
         updateTodo(todo.id, {...todo, todo: todoMsg})
         setIsTodoEditable(false)
+        // set it to false => return back to orginal form
     }
 
     const toggleCompleted = ()=>{
