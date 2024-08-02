@@ -1,13 +1,18 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { act } from "react";
 
-// createSlice is used for creating our reducers and NAnoid for generating our random ID 
+// createSlice is used for creating our reducers and Nanoid for generating our random ID 
 
 // reducers are used to insert info and retrieve info from STORE and its has funtion functionality
 // slicers are broader term then reducers
 
 const initialState = {
-    todos: [{id: 1, text: "Hello World"}]
+    todos: [
+        {
+            id: 1, 
+            text: "Hello World"
+        }
+    ]
 }
 
 // we are intializing our STORE with some initialstate (data)
@@ -21,7 +26,7 @@ export const todoSlice = createSlice({
     name: "todo",
     initialState,
 
-    // since we want to set ou initialState as initialState prop , so we use new syntax
+    // since we want to set our initialState as initialState prop , so we use new syntax for initialstate: initialstate
 
     // now give a reducer object fucntionality
 
