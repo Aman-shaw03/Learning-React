@@ -15,7 +15,7 @@ export const todoSlice = createSlice({
     initialState,
 // my question is why we craeting this name "todo", where we will see it or use it 
 
-
+// this is the naming convention , its "reducers" and not "reducer"
     reducers : {
         addTodo: (state, action)=> {
             const todo = {

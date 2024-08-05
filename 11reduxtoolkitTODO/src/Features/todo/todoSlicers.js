@@ -31,6 +31,13 @@ export const todoSlice = createSlice({
     // since we want to set our initialState as initialState prop , so we use new syntax for initialstate: initialstate
 
     // now give a reducer object fucntionality
+    // action . payload?
+//     type(pin):"todo/removeTodo"
+// payload(pin):"J-NpiLZVQ1vOX24kYCKcy"
+// this is action object values, we access it with "."
+// and this (name: "todo",) is the namespace for our reducer functions (type(pin):"todo/removeTodo")
+
+
 
 
     reducers: {
