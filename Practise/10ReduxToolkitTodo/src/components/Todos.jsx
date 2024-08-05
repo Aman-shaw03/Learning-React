@@ -1,12 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { removeTodo, updateTodo } from '../Features/todo/todoSlicers'
+import {useDispatch, useSelector  } from "react-redux";
+import { removeTodo, updateTodo } from "../Features/todo/todoSlicers";
 
 function Todos() {
-    const todos = useSelector(state => state.todos)
-    // useselector gives us a current state of our store, which has all our todos
     const dispatch = useDispatch()
-
+    const todos = useSelector((state) => state.todos)
   return (
     <>
     <div>Todos</div>
@@ -17,6 +15,7 @@ function Todos() {
             key={todo.id}
           >
             <div className='text-white'>{todo.text}</div>
+            
             
             <button
              onClick={() => dispatch(removeTodo(todo.id))}
@@ -37,12 +36,12 @@ function Todos() {
                 />
               </svg>
             </button>
+            
           </li>
         ))}
       </ul>
     </>
   )
 }
-
 
 export default Todos

@@ -14,7 +14,8 @@ const initialState = {
         }
     ]
 }
-
+// state alwasy has access to the todos  initialstate waala
+ 
 // we are intializing our STORE with some initialstate (data)
 
 // now create a slice 
@@ -25,6 +26,7 @@ export const todoSlice = createSlice({
 
     name: "todo",
     initialState,
+    // this name: todo will reflect while using redux extension in chrome
 
     // since we want to set our initialState as initialState prop , so we use new syntax for initialstate: initialstate
 
@@ -38,6 +40,8 @@ export const todoSlice = createSlice({
                 text: action.payload
             }
             // reducer provide 1. currentstate(state) and 2. a way to get values(action)
+            // action => for us to pass any params/args
+            //action.payload is a Object
 
             state.todos.push(todo)
             // current state (todos) me directly push kr dia 
@@ -53,7 +57,7 @@ export const todoSlice = createSlice({
     } 
 })
 
-// in above we export our todoSlice but we have separately export our slicer/reducer and reducers (yes 2 times)
+// in above we export our todoSlice but we have separately export our slicer/reducer actions  and reducers (yes 2 times)
 
 export const {addTodo, updateTodo, removeTodo} = todoSlice.actions
 // here we are exporting our functionality separately , we can use them on building our components
