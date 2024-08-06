@@ -18,6 +18,24 @@ export class Service {
     // Appwrite serive :: createPost :: error AppwriteException: Invalid `documentId` param:
     //  Parameter must contain at most 36 chars. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. 
     //  Can't start with a special char on line 23
+    // async createPost({title, slug, content, featuredImage, status, userId}){
+    //     try {
+    //         return await this.databases.createDocument(
+    //             conf.appWriteDatabaseId,
+    //             conf.appWriteCollectionId,
+    //             slug,
+    //             {
+    //                 title,
+    //                 content,
+    //                 featuredImage,
+    //                 status,
+    //                 userId,
+    //             }
+    //         )
+    //     } catch (error) {
+    //         console.log("Appwrite serive :: createPost :: error", error);
+    //     }
+    // }
     async createPost({title, slug, content, featuredImage, status, userId}){
         try {
             return await this.databases.createDocument(

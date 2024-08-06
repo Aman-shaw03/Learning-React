@@ -21,15 +21,16 @@ export default function PostForm({post}) {
 
   const submit = async (data) => {
     if (post) {
-      const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null
+      const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
       if(file){
-        appwriteService.deleteFile(post.featureImage)
+        appwriteService.deleteFile(post.featuredImage)
       }
       const dbpost = await appwriteService.updatePost(post.$id,{
         ...data,
         featuredImage: file ? file.$id :undefined,
-      })
+      });
+
       if (dbpost) {
         navigate(`/post/${dbpost.$id}`)
       }
@@ -37,10 +38,12 @@ export default function PostForm({post}) {
     
     } else{
       const file = await appwriteService.uploadFile(data.image[0]);
+
+
       // some error on line 44 , which result in 400 
       if(file){
         const fileId = file.$id
-        data.featureImage = fileId
+        data.featuredImage = fileId
         const dbPost = await appwriteService.createPost({
           ...data,
           userId: userData.$id
@@ -57,7 +60,8 @@ export default function PostForm({post}) {
       return value
       .trim()
       .toLowerCase()
-      .replace(/[a-zA-Z\d]+/g,"-")
+      .replace(/[^a-zA-Z\d\s]+/g, "-")
+      .replace(/\s/g, "-");
       
     
     return "";
