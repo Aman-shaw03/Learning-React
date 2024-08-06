@@ -37,7 +37,7 @@ export default function PostForm({post}) {
     
     } else{
       const file = await appwriteService.uploadFile(data.image[0]);
-
+      // some error on line 44 , which result in 400 
       if(file){
         const fileId = file.$id
         data.featureImage = fileId
