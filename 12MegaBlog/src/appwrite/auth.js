@@ -15,11 +15,8 @@ export class AuthService {
 
     async createAccount({email, password, name}) {
         try {
-            function generateUniqueID(){
-                return "user_" + Math.random().toString(36).substring(2,28);
-            }
-            const userId = generateUniqueID();
-            const userAccount = await this.account.create(userId,email, password , name)
+            // i have not used the ID from appwrite so the error is thrown regarding invlid id
+            const userAccount = await this.account.create(ID.unique(),email, password , name)
             if (userAccount) {
                 // create a new method that create "login"
                 return this.logIn({email, password});

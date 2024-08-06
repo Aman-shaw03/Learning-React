@@ -1,5 +1,6 @@
-import conf from "../conf/conf";
+import conf from "../conf/conf.js";
 import {Client, ID, Databases, Storage, Query} from "appwrite"
+
 
 export class Service {
     client = new Client();
@@ -13,7 +14,10 @@ export class Service {
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client)
     }
-
+    // there is some error here
+    // Appwrite serive :: createPost :: error AppwriteException: Invalid `documentId` param:
+    //  Parameter must contain at most 36 chars. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. 
+    //  Can't start with a special char
     async createPost({title, slug, content, featuredImage, status, userId}){
         try {
             return await this.databases.createDocument(
