@@ -1,4 +1,4 @@
-import conf from "../conf/conf.js"
+import conf from "../../conf"
 
 /* 1 */
 // here we are creating service ..which is like a setup for our functions 
