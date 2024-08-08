@@ -8,6 +8,7 @@ export class Services{
     client = new Client()
     databases;
     bucket;
+    // storage is Bucket
 
     constructor(){
         this.client
