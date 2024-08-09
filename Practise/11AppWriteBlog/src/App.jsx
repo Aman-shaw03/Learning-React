@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, {useEffect, useState} from 'react'
+import {useDispatch} from "react-redux"
+import authservices from './appwrite/Auth'
+import {login, logout} from './store/authSlice'
+import {Header, Footer} from "./components"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true)
+  //logic :- since we are taking data from appwrite using the services we created , sometime it will take time 
+  // to give us the data, so industry standard code practise is to create a state for this loading , so if 
+  // loading is True means we dont have the data and we will use useEffect to get the data
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  const dispatch = useDispatch()
+
+// using the service created to getcurrentUser and getting data , then dispatching it to login/logout action created on authSlice while setting store and then since we got data , we set the Loading False 
+  useEffect(() => {
+    authservices.getCurrentUser()
+    .then((userData) => {
+      if(userData){
+        dispatch(login({userData}))
+      }else{
+        dispatch(logout())
+      }
+    })
+    .finally(() => setLoading(false))
+  })
+
+  // conditionally rendering here if Loading = False (means we get the data perform this action )  other wise 
+  // null but !loading(meant that if loading which is initially set as "true" is "false" or not)
+  return !loading ? (
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className="w-full block">
+        <main>
+          <Header/>
+          {/* <Outlet/> */}
+          <Footer/>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  ) : null
 }
 
 export default App

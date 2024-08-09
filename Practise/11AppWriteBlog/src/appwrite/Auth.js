@@ -1,4 +1,4 @@
-import conf from "../../conf"
+import conf from "../../conf/conf"
 
 /* 1 */
 // here we are creating service ..which is like a setup for our functions 
@@ -58,6 +58,7 @@ export class AuthServices {
         } catch (error) {
             console.log(`APPwrite server :: getCurrentUser Error :: `, error);
         }
+        return null;
     }
 
     async logOut(){
