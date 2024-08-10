@@ -3,7 +3,7 @@ import Logo from "../index"
 import {Link} from "react-router-dom"
 
 function Footer() {
-  // upon copy pasting code from code file , we see that it uses a Logo component and Link which is from React router DOM item
+  // upon copy pasting code from code file , we see that it uses a Logo component and Link which is from React router DOM item and nothing else till now
   return (
     <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black">
     <div className="relative z-10 mx-auto max-w-7xl px-4">

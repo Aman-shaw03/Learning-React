@@ -5,6 +5,7 @@ import React, {forwardRef, useId} from 'react'
 // so whatever the value is in that components has to pass to the form page where we will take it into account 
 // there we will forwardRef to give us that state 
 // form page will pass the ref to the comp => then comp will pass the state to the form
+// this is the child components , which takes ref from a parent anfd inexchange for ref it will pass his state for parent to access it
 
 /*common syntax (production Grade) */
 
@@ -26,7 +27,8 @@ const Input = forwardRef(function Input({
                         className='inline-block mb-1 pl-1'
                         htmlFor={id}>
                             {label}
-                    </label>}
+                    </label>
+            }
             <input
             type={type}
             className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full  ${className}`}
