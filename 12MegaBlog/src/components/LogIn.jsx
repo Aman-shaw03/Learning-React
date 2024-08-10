@@ -65,7 +65,7 @@ function LogIn() {
                     })}
                     />
                     {/* // syntax to use "register"
-                    // its compulsory to spread our register value in every components or else same value 
+                    // its compulsory to spread our register value in every Input component we craete  or else same value 
                     //will got overwrite and unique name should be give like this "email" */}
                     <Input
                     label= "Password: "
@@ -78,7 +78,7 @@ function LogIn() {
                     <Button
                     type='submit'
                     className='w-full'
-                    >Sign In</Button>
+                    >Log In</Button>
                 </div>
             </form>
         </div>
