@@ -13,7 +13,7 @@ export default function RTE({name, control, label, defaultValue = ""}) {
         <Controller
          name={name || "Editor"}
          control={control}
-         // in the callback we want when we are rendering , and field might change so we track the field with a onchange event
+         // in the callback we want when we are rendering , and field might change so we track the field with a onchange event => changes are sync with both onChange's
          render={( {field: {onChange}} ) => (
             <Editor
              initialValue={defaultValue}

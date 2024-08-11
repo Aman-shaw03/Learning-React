@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 import { useForm } from 'react-hook-form'
 import appwriteService from "../../appwrite/config"
 
-// i think since is the form component which takes account of our RTE , input , button so error will be here
+// i think since it is the form component which takes account of our RTE , input , button so error will be here
 // either this or our pages
 export default function PostForm({post}) {
   const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
@@ -21,6 +21,7 @@ export default function PostForm({post}) {
   const userData =  useSelector((state) => state.auth.userData)
 
   const submit = async (data) => {
+    // data which we are sending. post = previous post data
     if (post) {
       const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
@@ -29,7 +30,8 @@ export default function PostForm({post}) {
       }
       const dbpost = await appwriteService.updatePost(post.$id,{
         ...data,
-        featuredImage: file ? file.$id :undefined,
+        featuredImage: file ? file.$id :undefined
+        // i think this undefined is causing the error
       });
 
       if (dbpost) {

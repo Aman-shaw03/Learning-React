@@ -54,7 +54,6 @@ function Login() {
             </p>
             {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
             // if any error happen, display here
-
             <form className = "mt-8" onSubmit={handleSubmit(login)}>
                 <div className='space-y-5'>
                     // we have to spread register for every particular Inputs components or data will overwrite
