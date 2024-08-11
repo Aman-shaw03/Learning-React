@@ -5,7 +5,8 @@ import {useNavigate} from "react-router-dom"
 import { useForm } from 'react-hook-form'
 import appwriteService from "../../appwrite/config"
 
-
+// i think since is the form component which takes account of our RTE , input , button so error will be here
+// either this or our pages
 export default function PostForm({post}) {
   const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
     defaultValues: {
