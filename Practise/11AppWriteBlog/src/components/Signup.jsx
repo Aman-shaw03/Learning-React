@@ -46,6 +46,7 @@ function Signup() {
             {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
             <form onSubmit={handleSubmit(create)}>
                 <div className='space-y-5'>
+                    // we are using our Inputs component which we created 
                     <Inputs
                      label = "Full Name: "
                      placeholder = "Enter your Name"
@@ -68,6 +69,7 @@ function Signup() {
                       {...register("password",{
                         required: true  
                       })}/>
+                      // we are using our Buttons component which we created 
                       <Buttons type='submit' className='w-full'>Create Account</Buttons>
                 </div>
             </form>

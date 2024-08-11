@@ -1,26 +1,26 @@
+// setting up our RTE component with react Hook form(to get access to state) and tinyMCE
 import React from 'react'
-import {Editor} from "@tinymce/tinymce-react"
 import {Controller} from "react-hook-form"
+// whatever we do with forwardref , we can have same functionality with react hook form
+import { Editor } from "@tinymce/tinymce-react";
 
-export default function RTE({name, label, control, defaultValue = ""}) {
-    // this control is what gives the data/state to the form(or any parent/component) which uses this RTE component
-    // so parent component will give the control and take access to state
+export default function RTE({name, control, label, defaultValue = ""}) {
+    // parent will give control and take access to state like "ref"
   return (
     <div className='w-full'>
         {label && <label className='mb-1 pl-1 inline-block'>{label}</label>}
 
         <Controller
-        name={name || "content"}
-        control={control}
-        // whatever parent form/component want control to state , it will Give control
-        // in the call back we want to set tracking(event change) on the "field", so below is the syntax
-        render={({field: {onChange}}) => (
+         name={name || "Editor"}
+         control={control}
+         // in the callback we want when we are rendering , and field might change so we track the field with a onchange event
+         render={( {field: {onChange}} ) => (
             <Editor
-                initialValue={defaultValue}
-                // in project we dont have to setup apikey but it will crash so i did it
-                apiKey='pbbr9b8moku4zmoi9b30djhlz2xq7aaaqthrmusxf7fp2wh6' 
-                init={{
-                    initialValue: defaultValue,
+             initialValue={defaultValue}
+             apiKey='wcrolqf0zaqljkuwuyk0ogdd8am6e3e4m9q8elecs2nnond7'
+             init={
+                {
+                    initialValue : defaultValue,
                     height: 500,
                     menubar: true,
                     plugins: [
@@ -48,11 +48,14 @@ export default function RTE({name, label, control, defaultValue = ""}) {
                     toolbar:
                         "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
                     content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
-                }}
-                onEditorChange={onChange}
-            />
-        )}
+                }
+             }
+             onEditorChange={onChange}
+             />
+         )}
         />
     </div>
   )
 }
+// have to read docs for both React Hook form and tiny MCE
+
