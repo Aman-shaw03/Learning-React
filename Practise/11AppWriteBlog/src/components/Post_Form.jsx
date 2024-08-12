@@ -49,6 +49,7 @@ export default function Post_Form({post}) {
     }
   }
 
+
   // todo:- we have 2 input fields (title and slug) we have to "watch" title and generate values in Slug , 
   //replace space in title with "-" ,watch will be in useEffect as a dependencies, and we will use useCallback
   const slugTransform = useCallback((value) => {
@@ -56,6 +57,8 @@ export default function Post_Form({post}) {
       .replace(/\s/g, "-");
      
   })
+
+
 // watch keeps on monitor title field and if anything changes , useEffect will execute and recalculate the slu and setValue sets it
   React.useEffect(() => {
     // in watch we get the "value" from register as a object, we get the object from useForm , check the default values
@@ -69,6 +72,7 @@ export default function Post_Form({post}) {
   },[watch, slugTransform, setValue])
   // we will pass this watch to the "title" input field in the form
   
+
   
 // copy paste the return "form" so check it
   return (
@@ -87,7 +91,7 @@ export default function Post_Form({post}) {
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
-                    }}
+                    }} //if we wish to manually enter our slug
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
