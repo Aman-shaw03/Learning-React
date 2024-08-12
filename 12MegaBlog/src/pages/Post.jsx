@@ -31,8 +31,8 @@ export default function Post() {
       }
     })
   }
-
-  return Post? (
+// post is capitalise Here , corrected it 
+  return post ? (
     <div className='py-8'>
       <Container>
         <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
