@@ -78,7 +78,7 @@ export default function PostForm({post}) {
       });
       return () => subscription.unsubscribe();
     },[watch , slugTransform, setValue]);
-      // interview Q :- in this useEffect we are calling a method ...how can we optimise it ?
+      // interview Q :- in this useEffect we are calling a method ...how can we optimise it (so the method"watch") is not keeping on running?
       // we can hold the method in a variable and then at the end return the variable that hold the function and Unsubscribe 
       // so it wont keep it in a loop , that way we can optimise it
 
