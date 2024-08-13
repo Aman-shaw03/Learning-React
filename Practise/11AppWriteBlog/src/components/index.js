@@ -2,7 +2,7 @@ import Container from "./container/Container"
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import LogoutBtn from "./Header/LogoutBtn"
-import AuthLayout from "./authLayout"
+import AuthLayout from "./AuthLayout"
 import Buttons from "./Buttons"
 import Inputs from "./Inputs"
 import Login from "./Login"
