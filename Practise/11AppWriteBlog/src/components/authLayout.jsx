@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 // it acts as a protection to our routes, pages
-
+// i name this jsx file in small letter (authLayout) where names start should be capital
 export default function Protected({children , authentication = true}) {
     const navigate = useNavigate()
     const [loader, setLoader] = useState(true)

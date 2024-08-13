@@ -3,7 +3,7 @@ import {Logo, LogoutBtn, Container } from "../index"
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 function Header() {
-  const authStatus = useSelector( state => state.auth.status)
+  const authStatus = useSelector( (state) => state.status)
   // we checked status here from AuthSlice
   // will use those for displaying nav items in Header like a Login person shouldnt see login, signup in header
   const navigate = useNavigate()
