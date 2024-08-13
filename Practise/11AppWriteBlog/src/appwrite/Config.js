@@ -1,4 +1,4 @@
-import conf from "../../conf/conf";
+import conf from "../conf/conf";
 // now we want to create some more service so it can handle our project main Operations 
 // since our Project is a Blog APP , so getpost , createpost, editPost , deletePost will needed in this service
 
