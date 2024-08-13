@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
-const intialState = {
+const initialState = {
     status: false,
     userDate: null
 }
 
 const authSlice = createSlice({
     name: "auth",
-    intialState,
+    initialState,
     // spelling mistake initialstate => initialState
 
     reducers: {
