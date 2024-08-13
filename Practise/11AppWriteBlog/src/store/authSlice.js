@@ -1,28 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const intialstate = {
+const intialState = {
     status: false,
     userDate: null
 }
 
 const authSlice = createSlice({
     name: "auth",
-    intialstate,
+    intialState,
+    // spelling mistake initialstate => initialState
 
     reducers: {
         login: (state, action) => {
             state.status = true
-            state.userDate = action.payload
+            state.userData = action.payload
+            //spelling mistake userDate => userData
         },
         logout: (state)=> {
             state.status = false
-            state.userDate = null
+            state.userData = null
+            //spelling mistake userDate => userData
         }
     }
 })
 
-export const {login, logout} = authSlice.actions
-export default authSlice.reducer
+export const {login, logout} = authSlice.actions;
+export default authSlice.reducer;
 
 // few suggestions//
 /* here we are creating a reducer just to check if user is Login or logout ,
