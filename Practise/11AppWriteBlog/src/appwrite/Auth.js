@@ -1,9 +1,11 @@
-import conf from "../../conf/conf"
+import conf from "../conf/conf"
 
 /* 1 */
 // here we are creating service ..which is like a setup for our functions 
 // which we will export after creating to use separately with appwrite or any other BaaS or DB
 
+/*
+ */
 import { Client, Account, ID} from 'appwrite';
 
 export class AuthServices {
@@ -14,7 +16,7 @@ export class AuthServices {
     // in docs they have created the client and account , but we didn't as thinking beind this is 
     // we someone create a Object with new => a function creates this client and account , so we setup our 
     //constructor which create this client and account (everytime some create a object with new keyword)
-    constructor(){
+    constructor() {
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjctId);

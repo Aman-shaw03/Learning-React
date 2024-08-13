@@ -6,8 +6,7 @@ import {Provider} from "react-redux"
 import store from "./store/store.js"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from "./pages/Home.jsx"
-import {AuthLayout} from './components/index.js'
-import Login from "./pages/Login.jsx"
+import {AuthLayout, Login} from './components/index.js'
 import Signup from "./pages/Signup.jsx"
 import Allpost from "./pages/Allpost.jsx"
 import Editpost from "./pages/Editpost.jsx"
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: "/signup",
+        path: "/Signup",
         element: (
           <AuthLayout authentication = {false}>
             <Signup/>
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: "/allpost",
+        path: "/all-post",
         element: (
           <AuthLayout authentication >
             {" "}
@@ -49,7 +48,16 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: "/editpost/:slug",
+        path: "/add-post",
+        element: (
+          <AuthLayout authentication >
+            {" "}
+            <Addpost/>
+          </AuthLayout>
+        )
+      },
+      {
+        path: "/edit-post/:slug",
         element: (
           <AuthLayout authentication>
             {" "}
@@ -59,25 +67,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/post/:slug",
-        element: (
-          <AuthLayout authentication >
-            {" "}
-            <Post/>
-          </AuthLayout>
-        )
-      },
-      {
-        path: "/addpost",
-        element: (
-          <AuthLayout authentication >
-            {" "}
-            <Addpost/>
-          </AuthLayout>
-        )
-      },
+        element: <Post/>
+        
+      }
     ]
   }
 ])
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>

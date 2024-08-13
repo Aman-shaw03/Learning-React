@@ -1,31 +1,27 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    status: false,
+    status : false,
     userData: null
-    //spelling mistake here userDate
 }
 
 const authSlice = createSlice({
     name: "auth",
     initialState,
-    // spelling mistake initialstate => initialState
-
     reducers: {
         login: (state, action) => {
-            state.status = true
-            state.userData = action.payload
-            //spelling mistake userDate => userData
+            state.status = true;
+            state.userData = action.payload.userData;
         },
-        logout: (state)=> {
-            state.status = false
-            state.userData = null
-            //spelling mistake userDate => userData
+        logout: (state) => {
+            state.status = false;
+            state.userData = null;
         }
-    }
+     }
 })
 
 export const {login, logout} = authSlice.actions;
+
 export default authSlice.reducer;
 
 // few suggestions//
