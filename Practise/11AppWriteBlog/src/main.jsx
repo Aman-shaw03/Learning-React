@@ -6,13 +6,14 @@ import {Provider} from "react-redux"
 import store from "./store/store.js"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from "./pages/Home.jsx"
-import authLayout from './components/index.js'
+import {AuthLayout} from './components/index.js'
 import Login from "./pages/Login.jsx"
 import Signup from "./pages/Signup.jsx"
 import Allpost from "./pages/Allpost.jsx"
 import Editpost from "./pages/Editpost.jsx"
 import Post from "./pages/Post.jsx"
 import Addpost from "./pages/Addpost.jsx"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,58 +21,58 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
         path: "/login",
         element: (
-          <authLayout authentication = {false}>
+          <AuthLayout authentication={false}>
             <Login/>
-          </authLayout>
+          </AuthLayout>
         )
       },
       {
         path: "/signup",
         element: (
-          <authLayout authentication = {false}>
+          <AuthLayout authentication = {false}>
             <Signup/>
-          </authLayout>
+          </AuthLayout>
         )
       },
       {
         path: "/allpost",
         element: (
-          <authLayout authentication >
+          <AuthLayout authentication >
             {" "}
             <Allpost/>
-          </authLayout>
+          </AuthLayout>
         )
       },
       {
         path: "/editpost/:slug",
         element: (
-          <authLayout authentication>
+          <AuthLayout authentication>
             {" "}
             <Editpost/>
-          </authLayout>
+          </AuthLayout>
         )
       },
       {
         path: "/post/:slug",
         element: (
-          <authLayout authentication >
+          <AuthLayout authentication >
             {" "}
             <Post/>
-          </authLayout>
+          </AuthLayout>
         )
       },
       {
         path: "/addpost",
         element: (
-          <authLayout authentication >
+          <AuthLayout authentication >
             {" "}
             <Addpost/>
-          </authLayout>
+          </AuthLayout>
         )
       },
     ]
