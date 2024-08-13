@@ -16,7 +16,7 @@ import Addpost from "./pages/Addpost.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: "/",
@@ -69,9 +69,9 @@ const router = createBrowserRouter([
         path: "/post/:slug",
         element: <Post/>
         
-      }
-    ]
-  }
+      },
+    ],
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
