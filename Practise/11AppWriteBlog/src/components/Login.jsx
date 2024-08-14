@@ -24,7 +24,8 @@ function Login() {
             if (session) {
                 const userData = await authservices.getCurrentUser()
                 if(userData) dispatch(authLogin(userData))
-                    navigate("/") // if successfully dispatch login , then navigate to Home
+                navigate("/") 
+                    // if successfully dispatch login , then navigate to Home
                     // basically authservices se login kia , get current user se userdata lia then finally authslice ka suthLogin se log in kia
             }
         } catch (error) {
@@ -64,7 +65,10 @@ function Login() {
                      label = "Email: "
                      {...register("email", {
                         required: true,
-                        validate: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a Valid Address"
+                        validate: {
+                            matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                            "Email address must be a valid address",
+                        }
                         // validate is checking the email and test it ..if false || executes 
                      })} />
                      <Inputs
@@ -72,13 +76,13 @@ function Login() {
                      placeholder = "Enter your password"
                      type = "password"
                      {...register("password", {
-                        required: true
+                        required: true,
                      })}/>
                      {/* // we are using our Buttons component which we created  */}
                     <Buttons
                     type='submit'
                     className='w-full'
-                    >Log In
+                    >Sign  In
                     </Buttons>
                 </div>
             </form>
