@@ -15,8 +15,9 @@ function Signup() {
     const create = async(data) => {
         setError("") //flushing out errors
         try {
-            const session = await authservices.createAccount(data)
-            if (session) {
+            // naming is wrong
+            const userData = await authservices.createAccount(data)
+            if (userData) {
                 const userData = await authservices.getCurrentUser()
                 if(userData) dispatch(login(userData))
                     navigate("/")
@@ -33,7 +34,7 @@ function Signup() {
                     <Logo width="100%" />
                 </span>
             </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
+            <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
             <p className="mt-2 text-center text-base text-black/60">
                 Already have an account?&nbsp;
                 <Link
@@ -51,7 +52,7 @@ function Signup() {
                      label = "Full Name: "
                      placeholder = "Enter your Name"
                      {...register("name", {
-                        required: true
+                        required: true,
                      })}/>
                     <Inputs 
                      type = "email"
@@ -59,7 +60,10 @@ function Signup() {
                      label = "Email: "
                      {...register("email", {
                         required: true,
-                        validate: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a Valid Address"
+                        validate: {
+                            matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                            "Email address must be a valid address",
+                        }
                         // validate is checking the email and test it ..if false || executes 
                      })} />
                      <Inputs
@@ -67,7 +71,7 @@ function Signup() {
                       placeholder = "Enter your password"
                       label = "Enter Password: "
                       {...register("password",{
-                        required: true  
+                        required: true,  
                       })}/>
                       {/* // we are using our Buttons component which we created  */}
                       <Buttons type='submit' className='w-full'>Create Account</Buttons>
