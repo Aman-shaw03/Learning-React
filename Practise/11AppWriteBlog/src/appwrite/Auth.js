@@ -1,11 +1,9 @@
-import conf from "../conf/conf"
+import conf from "../conf/conf.js"
 
 /* 1 */
 // here we are creating service ..which is like a setup for our functions 
 // which we will export after creating to use separately with appwrite or any other BaaS or DB
 
-/*
- */
 import { Client, Account, ID} from 'appwrite';
 
 export class AuthServices {
@@ -27,7 +25,7 @@ export class AuthServices {
     // now we have to create a function for login .why?(so we write such code that it does not depend on any 1 service 
     // but rather our code creates a wrapper for the service , so in future we change from Appwrite to firebase => can easily change it )
 
-    async createAccount({email , password , name}){
+    async createAccount({email, password, name}){
         try {
             const userAccount = await this.account.create(ID.unique(), email , password, name)
 
@@ -38,7 +36,8 @@ export class AuthServices {
                 return userAccount
             }
         } catch (error) {
-            console.log(`APPwrite server :: createAccount Error :: `, error);
+            throw error
+            //specifically throw error , so we can show it on Component
             
         }
     }
@@ -47,7 +46,7 @@ export class AuthServices {
         try {
             return await this.account.createEmailPasswordSession(email, password)
         } catch (error) {
-            console.log(`APPwrite server :: logIn Error :: `, error);
+            throw error
         }
     }
 

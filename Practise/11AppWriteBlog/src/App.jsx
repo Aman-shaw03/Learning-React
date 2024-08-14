@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 import authservices from './appwrite/Auth'
 import {login, logout} from './store/authSlice'
 import {Header, Footer} from "./components"
@@ -15,17 +15,17 @@ function App() {
   const dispatch = useDispatch()
 
 // using the service created to getcurrentUser and getting data , then dispatching it to login/logout action created on authSlice while setting store and then since we got data , we set the Loading False 
-useEffect(() => {
-  authservices.getCurrentUser()
-  .then((userData) => {
-    if (userData) {
-      dispatch(login({userData}))
-    } else {
-      dispatch(logout())
-    }
-  })
-  .finally(() => setLoading(false))
-}, [])
+  useEffect(() => {
+    authservices.getCurrentUser()
+    .then((userData) => {
+      if (userData) {
+        dispatch(login({userData}))
+      } else {
+        dispatch(logout())
+      }
+    })
+    .finally(() => setLoading(false))
+  }, [])
 
   // conditionally rendering here if Loading = False (means we get the data perform this action )  other wise 
   // null but !loading(meant that if loading which is initially set as "true" is "false" or not)

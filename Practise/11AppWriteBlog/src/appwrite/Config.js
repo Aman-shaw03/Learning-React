@@ -2,7 +2,7 @@ import conf from "../conf/conf";
 // now we want to create some more service so it can handle our project main Operations 
 // since our Project is a Blog APP , so getpost , createpost, editPost , deletePost will needed in this service
 
-import {Client, ID, Databases, Storage, Query} from "appwrite"
+import { Client, ID, Databases, Storage, Query } from "appwrite"
 
 export class Services{
     client = new Client()
@@ -13,7 +13,7 @@ export class Services{
     constructor(){
         this.client
         .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProjectId)
+        .setProject(conf.appwriteProjectId);
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
@@ -28,9 +28,9 @@ export class Services{
                 {
                     title,
                     content,
-                    status,
                     featuredImage,
-                    userId
+                    status,
+                    userId,
                 }
             )
         } catch (error) {
@@ -48,7 +48,7 @@ export class Services{
                     title,
                     content,
                     featuredImage,
-                    status
+                    status,
                 }
             )
         } catch (error) {
@@ -108,12 +108,13 @@ export class Services{
             )
         } catch (error) {
             console.log(`APPwrite server :: uploadFile Error :: `, error);
+            return false
         }
     }
 
     async deleteFile(fileId){
         try {
-            return await this.bucket.deleteFile(
+            await this.bucket.deleteFile(
                 conf.appwriteBucketId,
                 fileId
                 // where we gonna get the fileID? when we upload file , we send id.unique() 
@@ -121,18 +122,16 @@ export class Services{
             )
         } catch (error) {
             console.log(`APPwrite server :: deleteFile Error :: `, error);
+            return false
         }
     }
     
     getFilePreview(fileId){
-        try {
-            return this.bucket.getFilePreview(
-                conf.appwriteBucketId,
-                fileId
-            )
-        } catch (error) {
-            console.log(`APPwrite server :: getFilePreview Error :: `, error);
-        }
+        return this.bucket.getFilePreview(
+            conf.appwriteBucketId,
+            fileId
+        )
+        
     }
     // we didnt create this file previewer with async await , just because its fast and in DOCS its mention to use it without promise / async await
 }

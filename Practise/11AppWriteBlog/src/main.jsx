@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: (
           <AuthLayout authentication={false}>
-            <Login/>
+            <Login />
           </AuthLayout>
         )
       },
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: (
           <AuthLayout authentication = {false}>
-            <Signup/>
+            <Signup />
           </AuthLayout>
         )
       },
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication >
             {" "}
-            <Allpost/>
+            <Allpost />
           </AuthLayout>
         )
       },
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication >
             {" "}
-            <Addpost/>
+            <Addpost />
           </AuthLayout>
         )
       },
@@ -61,13 +61,13 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <Editpost/>
+            <Editpost />
           </AuthLayout>
         )
       },
       {
         path: "/post/:slug",
-        element: <Post/>
+        element: <Post />
         
       },
     ],
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+    <RouterProvider router={router}/>
     </Provider>
   </React.StrictMode>,
 )

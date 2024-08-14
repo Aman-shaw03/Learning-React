@@ -7,8 +7,11 @@ function LogoutBtn() {
     const dispatch = useDispatch()
     const buttonHandler = ()=> {
         authservices.logOut()
-        .then(dispatch(logout()))
-        .catch()
+        .then(() => {
+          dispatch(logout())
+        })
+        // i edited here for the callback function
+        
     }
     // using Appwrite Auth Service , which provided a promise so we use .then and .catch and 
     //in .then we dispatch that to authSlice store's logout function
