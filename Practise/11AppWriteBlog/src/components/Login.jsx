@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Buttons, Inputs, Logo} from "./index"
-import authservices from "../appwrite/Auth"
+import authServices from "../appwrite/Auth"
 import {login as authLogin} from "../store/authSlice"
 import {useDispatch} from "react-redux"
 import {useForm} from "react-hook-form"
@@ -18,21 +18,18 @@ function Login() {
     // so to actually add data on onclick we have to create a separate method
 
     const login = async(data) => {
-        setError("") // flushing out old errors
+        setError("")
         try {
-            const session = await authservices.logIn(data)
+            const session = await authServices.logIn(data)
             if (session) {
-                const userData = await authservices.getCurrentUser()
-                if(userData) dispatch(authLogin(userData))
-                navigate("/") 
-                    // if successfully dispatch login , then navigate to Home
-                    // basically authservices se login kia , get current user se userdata lia then finally authslice ka suthLogin se log in kia
+                const userData = await authServices.getCurrentUser()
+                if(userData) dispatch(authLogin(userData));
+                navigate("/")
             }
         } catch (error) {
             setError(error.message)
         }
     }
-
 
 
   return (
