@@ -1,5 +1,3 @@
-// we gonna create a Modular Login component
-//Practise React Hook from here.. must check
 import React, {useState} from 'react'
 import {Buttons, Inputs, Logo} from "./index"
 import authservices from "../appwrite/Auth"
@@ -8,6 +6,8 @@ import {useDispatch} from "react-redux"
 import {useForm} from "react-hook-form"
 import {Link, useNavigate} from "react-router-dom"
 
+// we gonna create a Modular Login component
+//Practise React Hook from here.. must check
 
 function Login() {
     const navigate = useNavigate()
