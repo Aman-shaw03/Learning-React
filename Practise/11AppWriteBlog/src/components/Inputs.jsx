@@ -12,11 +12,11 @@ const Inputs = forwardRef(function Inputs({
     return(
         <div className='w-full'>
             {label && 
-            <div 
+            <label 
              className='inline-block mb-1 pl-1'
-             htmlFor = {id}>
+             htmlFor ={id}>
                 {label}
-            </div>
+            </label>
             }
             <input 
              type={type}

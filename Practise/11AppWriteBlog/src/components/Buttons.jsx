@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Buttons({
+export default function Buttons({
     children,
     bgColor = "bg-blue-600",
-    textColor = "text-gray",
+    textColor = "text-white",
     className = "",
     type = "button",
     ...props
@@ -16,4 +16,3 @@ function Buttons({
 }
 // basically created a reuseable component for button which take args as a children for button name parameter
 // some styles are given defaul values, we also props just in case someone wanted to pass more attributes.
-export default Buttons
