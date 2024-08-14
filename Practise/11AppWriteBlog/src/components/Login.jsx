@@ -53,11 +53,11 @@ function Login() {
                     </Link>
             </p>
             {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
-            // if any error happen, display here
+            {/* // if any error happen, display here */}
             <form className = "mt-8" onSubmit={handleSubmit(login)}>
                 <div className='space-y-5'>
-                    // we have to spread register for every particular Inputs components or data will overwrite
-                    // we are using our Inputs component which we created 
+                    {/* // we have to spread register for every particular Inputs components or data will overwrite
+                    // we are using our Inputs component which we created  */}
                     <Inputs 
                      type = "email"
                      placeholder = "Enter Your Email"
@@ -74,7 +74,7 @@ function Login() {
                      {...register("password", {
                         required: true
                      })}/>
-                     // we are using our Buttons component which we created 
+                     {/* // we are using our Buttons component which we created  */}
                     <Buttons
                     type='submit'
                     className='w-full'
