@@ -10,7 +10,7 @@ function Post() {
   const [post, setPost] = useState(null)
   const navigate = useNavigate()
   const {slug} = useParams()
-  const userData = useSelector(state => state.auth.userData)
+  const userData = useSelector((state) => state.auth.userData)
 
   useEffect(() => {
     if(slug){
@@ -18,14 +18,14 @@ function Post() {
         if(post) setPost(post)
         else navigate("/")
   })} else navigate("/")
-  },[])
+  },[slug, navigate])
 
   // think of it like :- if we get data in post through useEffect and if there is userData then check it ,
   // if both id are same so (true) both will execute otherwise keep it false which means dont execute
-  const isAuthor = post && userData ? post.$id === userData.$id : false 
+  const isAuthor = post && userData ? post.userId === userData.$id : false ;
 
   const deleteButtonHandler = () => {
-    appwriteServices.deletePost(slug).then((status) => {
+    appwriteServices.deletePost(post.$id).then((status) => {
       if(status) {
         appwriteServices.deleteFile(post.featuredImage)
         navigate("/")
@@ -33,7 +33,7 @@ function Post() {
     })
   }
   return post ? (
-    <div>
+    <div className="py-8">
       <Container>
         <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
 
