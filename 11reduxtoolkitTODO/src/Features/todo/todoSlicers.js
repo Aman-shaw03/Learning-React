@@ -14,8 +14,8 @@ const initialState = {
         }
     ]
 }
-// state alwasy has access to the todos  initialstate waala
- 
+// state always has access to the todos  initialstate waala
+
 // we are intializing our STORE with some initialstate (data)
 
 // now create a slice 
